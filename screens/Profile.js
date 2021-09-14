@@ -54,7 +54,7 @@ const Profile = ({navigation}) => {
           <View style={styles.view}>
             <TextInput
               style={styles.label}
-              placeholder="priyambi.hiran@gmail.com:"
+              placeholder="email"
               placeholderTextColor="black"
             />
             {/* <Text>{navigation.getParam()}</Text> */}
