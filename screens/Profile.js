@@ -68,8 +68,8 @@ const Profile = ({navigation}) => {
             />
             <DatePicker
               style={styles.datePickerStyle}
-              date={date} // Initial date from state
-              mode="date" // The enum of date, datetime and time
+              date={date} 
+              mode="date" 
               placeholder="select date"
               format="DD-MM-YYYY"
               minDate="01-01-1980"
