@@ -232,7 +232,7 @@ import MainStackNavigator from './navigation/StackNavigator';
 export default function App() {
   return (
     <NavigationContainer>
-      <Tabs/>
+      <MainStackNavigator/>
       {/* <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="Splash"

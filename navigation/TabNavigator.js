@@ -1,5 +1,13 @@
 import React from 'react';
 import {
+    View,
+    TouchableOpacity,
+    StyleSheet,
+    Image,
+    StatusBar,
+    Text,
+  } from 'react-native';
+import {
      createBottomTabNavigator
      } from '@react-navigation/bottom-tabs';
 import Upcoming from '../screens/Upcoming';
@@ -53,14 +61,103 @@ const Stack = createStackNavigator();
 // }
 const Tabs=()=>{
     return(
-        <Tab.Navigator initialRouteName="Splash">
-             {/* <Tab.Screen name="Splash" component={Splash} options={{headerShown: false}}/> */}
-            <Tab.Screen name="Upcoming" component={Top} options={{headerShown: false}}/>
-            <Tab.Screen name="Search" component={Search} options={{headerShown: false}}/>
-            <Tab.Screen name="Favourite" component={Favourite} options={{headerShown: false}}/>
-            <Tab.Screen name="Home" component={MainStackNavigator} options={{headerShown: false}}/>
+        <Tab.Navigator  screenOptions={{
+                tabBarShowLabel:false,
+                tabBarStyle:{
+                position:'absolute',
+                bottom:25,
+                left:20,
+                right:20,
+                elevation:0,
+                backgroundColor:'lightpink',
+                borderRadius:15,
+                height:70,
+                ...styles.shadow
+
+                
+            }
+        }}>
+             
+            <Tab.Screen  name="Upcoming" component={Top} 
+                options={{
+                    headerShown: false,
+                    tabBarIcon:({focused})=>(
+                        <View>
+                            <Image
+                            source={require('../assets/up.png')}
+                            resizeMode='contain'
+                            style={{
+                                width:25,
+                                height:25,
+                                //tintColor:focused?'#e32f45':'#748c94'
+
+                            }}/>
+                        </View>
+                    )
+                 }}/>
+            <Tab.Screen  name="Search" component={Search} 
+            options={{
+                headerShown: false,
+                tabBarIcon:({focused})=>(
+                    <View>
+                        <Image
+                        source={require('../assets/search.png')}
+                        resizeMode='contain'
+                        style={{
+                            width:25,
+                            height:25,
+                            //tintColor:focused?'#e32f45':'#748c94'
+
+                        }}/>
+                    </View>
+                )
+             }}/>
+            <Tab.Screen  name="Favourite" component={Favourite}
+            options={{
+                headerShown: false,
+                tabBarIcon:({focused})=>(
+                    <View>
+                        <Image
+                        source={require('../assets/fav.png')}
+                        resizeMode='contain'
+                        style={{
+                            width:25,
+                            height:25,
+                            //tintColor:focused?'#e32f45':'#748c94'
+
+                        }}/>
+                    </View>
+                )
+             }}/>
+            <Tab.Screen  name="Profile" component={Profile}
+            options={{
+                headerShown: false,
+                tabBarIcon:({focused})=>(
+                    <View>
+                        <Image
+                        source={require('../assets/prof.png')}
+                        resizeMode='contain'
+                        style={{
+                            width:25,
+                            height:25,
+                            //tintColor:focused?'#e32f45':'#748c94'
+
+                        }}/>
+                    </View>
+                )
+             }}/>
         </Tab.Navigator>
     );
 }
 export default Tabs;
-
+const styles=StyleSheet.create({
+    shadow:{
+        shadowColor:'#7F5DF0',
+        shadowOffset:{
+            width:0,
+            height:0,
+    },
+    shadowOpacity:0.25,
+    shadowRadius:3.5,
+    elevation:5,}
+})

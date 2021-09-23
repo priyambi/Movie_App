@@ -9,8 +9,13 @@ import {
 } from 'react-native';
 export default function Upcoming(){
     return(
-        <View>
+        <View style={styles.container}>
             <Text>Hello</Text>
         </View>
     )
 }
+const styles=StyleSheet.create({
+    container:{
+        height:"80%",
+    }
+})

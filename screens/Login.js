@@ -9,6 +9,9 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+// import Tabs from '../navigation/TabNavigator';
+// import Home from '../screens/Home';
+// import {NavigationContainer} from '@react-navigation/native';
 
 export default function App({navigation}) {
   const [email, setEmail] = useState("");
@@ -51,10 +54,8 @@ export default function App({navigation}) {
 
       <TouchableOpacity
         style={styles.loginBtn}
-        onPress={() =>  
-          this.props.navigation.navigate('Profile', {  
-              email  })}
-         onPress={() => navigation.navigate('Profile',email)}
+      
+         onPress={() => navigation.navigate('Home') }
         // onPress={()=>{this.props.navigation.navigate('Profile', {
         //   data: email
         // });}}
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightpink',
     borderRadius: 30,
     borderColor: 'white',
-    borderWidth: 2,
+    borderWidth: 3,
     width: '80%',
     height: 45,
     marginBottom: 20,
