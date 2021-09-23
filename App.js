@@ -32,7 +32,7 @@
 //         {/* <Stack.Screen
 //           name="Details"
 //           component={DetailsScreen}
-//           options={{ title: 'Details Page' }} /> */}
+//           options={{ title: 'Detail Page' }} /> */}
 //       </Stack.Navigator>
 //   );
 // }
