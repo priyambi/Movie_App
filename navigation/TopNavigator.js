@@ -9,14 +9,14 @@ export default function Top(){
         <Tab.Navigator screenOptions={{
             //tabBarShowLabel:false,
             tabBarStyle:{
-            position:'absolute',
+            //position:'absolute',
             //bottom:25,
-            top:25,
-            left:20,
-            right:20,
+            //top:25,
+            //left:20,
+            //right:20,
             elevation:0,
-            backgroundColor:'lightpink',
-            borderRadius:15,
+            backgroundColor:'#dff9fb',
+           // borderRadius:15,
             height:40,
             justifyContent:'center',
             

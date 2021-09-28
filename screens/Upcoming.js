@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, Text, View, StyleSheet, TouchableOpacity, Alert,Image} from 'react-native';
-
+import {FlatList, Text, View, StyleSheet, TouchableOpacity, Alert,Image,ImageBackground} from 'react-native';
+import Dialogue from '../screens/Dialogue';
 
 export default function Upcoming() {
   const [data, setData] = useState([]);
@@ -14,39 +14,43 @@ export default function Upcoming() {
       .then(json => setData(json));
   }, []);
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>Upcoming Movies</Text>
+    <ImageBackground
+    source={require('../assets/profile1.jpg')}
+    resizeMode="cover"
+    style={styles.bg}>
+      
 
       <FlatList
         data={data.results}
         keyExtractor={({id}) => id}
         renderItem={({item}) => 
-        <View >
-          <TouchableOpacity onPress={()=>Alert.alert('Release Date:  ' + item.release_date)}>
-            <Text>{item.title}</Text>
-            {/* <Text>{item.release_date}</Text> */}
+        <View style={{flex:1,flexDirection:'row',marginBottom:3}}>
+          {/* <TouchableOpacity onPress={()=>Alert.alert('Release Date:  ' + item.release_date)}> */}
+            {/* <Text>{item.title}</Text> */}
+            <Image onPress={()=>Alert.alert(item.overview)} style={{width:80,height:80,margin:5}} 
+              source={{ uri: 'https://image.tmdb.org/t/p/original/' + item.poster_path }}/>
+              {/* <Image
+              source={{ uri:`https://image.tmdb.org/t/p/original/${item.poster_path}`}}/> */}
+              <View style={{flex:1,justifyContent:'center'}}>
+                <Text onPress={()=>Alert.alert(item.overview)} style={{fontSize:18,color:'black',marginBottom:15}}>{item.title}</Text>
+                <Text style={{fontSize:16,color:'black'}}>{item.release_date}</Text>
+              </View>
             
-          </TouchableOpacity>
+          {/* </TouchableOpacity> */}
           </View>
         }
       />
-    </View>
+    </ImageBackground>
   );
 }
 const styles=StyleSheet.create({
-    container: {
+    bg: {
         flex: 1,
-        backgroundColor: 'lightblue',
-        alignItems: 'center',
-        justifyContent: 'center',
+        
+        
+     
+      
        
       },
-      label:{
-        marginTop:70,
-        fontSize:30,
-        fontStyle:'italic',
-        textDecorationLine:'underline',
-        marginBottom:20,
-       
-      }
+     
 })

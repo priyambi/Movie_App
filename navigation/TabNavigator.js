@@ -65,12 +65,12 @@ const Tabs=()=>{
                 tabBarShowLabel:false,
                 tabBarStyle:{
                 position:'absolute',
-                bottom:25,
-                left:20,
-                right:20,
+                //bottom:25,
+                //left:20,
+                //right:20,
                 elevation:0,
-                backgroundColor:'lightpink',
-                borderRadius:15,
+                backgroundColor:'#dff9fb',
+                //borderRadius:15,
                 height:70,
                 ...styles.shadow
 
