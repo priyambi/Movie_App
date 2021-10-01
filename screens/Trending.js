@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {FlatList, Text, View, StyleSheet, TouchableOpacity, Alert,Image,ImageBackground} from 'react-native';
 
 
-export default function Upcoming() {
+export default function Trending({navigation}) {
   const [data, setData] = useState([]);
   //console.log(data);
 
@@ -32,7 +32,7 @@ export default function Upcoming() {
               {/* <Image
               source={{ uri:`https://image.tmdb.org/t/p/original/${item.poster_path}`}}/> */}
               <View style={{flex:1,justifyContent:'center'}}>
-                <Text style={{fontSize:18,color:'black',marginBottom:15}}>{item.title}</Text>
+                <Text onPress={() => navigation.navigate('Detail',{movieDetail:item})} style={{fontSize:18,color:'black',marginBottom:15}}>{item.title}</Text>
                 <Text style={{fontSize:16,color:'black'}}>{item.release_date}</Text>
               </View>
             
