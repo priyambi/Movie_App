@@ -8,6 +8,7 @@ import Signup from '../screens/Signup';
 import Profile from '../screens/Profile';
 import UploadImage from '../screens/UploadImage';
 import Home from '../screens/Home';
+import Detail from '../screens/Detail';
 const Stack = createStackNavigator();
 export default function MainStackNavigator(){
   return (
@@ -42,6 +43,11 @@ export default function MainStackNavigator(){
          <Stack.Screen
           name="Home"
           component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
           options={{headerShown: false}}
         />
        

@@ -3,7 +3,7 @@ import { FlatList, Text, View, StyleSheet, TouchableOpacity, Alert, Image, Image
 
 
 
-export default function Upcoming() {
+export default function Upcoming({navigation}) {
   const [data, setData] = useState([]);
   //console.log(data);
 
@@ -33,7 +33,7 @@ export default function Upcoming() {
             {/* <Image
               source={{ uri:`https://image.tmdb.org/t/p/original/${item.poster_path}`}}/> */}
             <View style={{ flex: 1, justifyContent: 'center' }}>
-              <Text onPress={() => Alert.alert(item.overview)} style={{ fontSize: 18, color: 'black', marginBottom: 15 }}>{item.title}</Text>
+              <Text onPress={() => navigation.navigate('Detail',{movieDetail:item})} style={{ fontSize: 18, color: 'black', marginBottom: 15 }}>{item.title}</Text>
               <Text style={{ fontSize: 16, color: 'black' }}>{item.release_date}</Text>
             </View>
 
