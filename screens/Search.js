@@ -38,7 +38,7 @@ const Search = ({navigation}) => {
           <View style={styles.form}>
             <TextInput
               style={styles.input}
-              placeholder={'Search Movie '}
+              placeholder={'Enter Movie Name '}
               placeholderTextColor='black'
               onChangeText={onChangeText}
               value={text}
@@ -52,7 +52,7 @@ const Search = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.searchItems}>
+        <View style={styles.search}>
         
         
             <FlatList
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize:35,
     fontWeight:'bold',
     fontStyle:'italic',
-    marginTop:10,
+    marginTop:15,
   },
   form: {
     flexBasis: 'auto',
@@ -102,13 +102,10 @@ const styles = StyleSheet.create({
     paddingRight: 8,
   },
 
-  searchItems: {
+  search: {
     padding: 5,
   },
 
-  noResults: {
-    paddingTop: 20,
-  },
   bg: {
     height: 700,
   },
