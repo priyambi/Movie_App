@@ -1,5 +1,5 @@
 
-import React, {useState, Component} from 'react';
+import React, {useState, Component,useContext} from 'react';
 import {
   Text,
   StyleSheet,
@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Button,
   Image,
+  Pressable,
   TouchableOpacity,
 } from 'react-native';
 import Slider from '@react-native-community/slider';
@@ -16,11 +17,14 @@ import ImagePicker from 'react-native-image-picker';
 import {ScrollView} from 'react-native-gesture-handler';
 import {withSafeAreaInsets} from 'react-native-safe-area-context';
 import DatePicker from 'react-native-datepicker';
+import { AuthContext } from '../navigation/AuthProvider';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const Profile = ({navigation}) => {
   const [value, setValue] = useState(0);
   const [genre, setGenre] = useState('None');
   const [date, setDate] = useState('25-04-1980');
+  const {logout } = useContext(AuthContext)
   console.log(date);
   var age_now;
   const calculate_age = date1 => {
@@ -47,6 +51,11 @@ const Profile = ({navigation}) => {
         source={require('../assets/profile1.jpg')}
         resizeMode="cover"
         style={styles.bg}>
+           <View style={styles.logout}>
+            <Pressable onPress={() => logout()}>
+            <Icon name={'ios-power-sharp'} size={30}></Icon>
+            </Pressable>
+            </View>
         <View>
           <Text style={styles.profile}>USER PROFILE</Text>
         </View>
@@ -59,6 +68,11 @@ const Profile = ({navigation}) => {
             />
             {/* <Text>{navigation.getParam()}</Text> */}
             {/* <Text style={styles.label}>{data}</Text> */}
+          </View>
+          <View>
+            {/* <TouchableOpacity onPress={()=>logout()} >
+              <Text>Logout</Text>
+            </TouchableOpacity> */}
           </View>
           <View style={styles.view}>
             <TextInput
@@ -180,7 +194,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textDecorationLine: 'underline',
     fontFamily: 'sans-serif',
-    marginTop: 70,
+    marginTop: 10,
     marginBottom: 10,
   },
   label: {
@@ -207,4 +221,9 @@ const styles = StyleSheet.create({
     width: 200,
     marginTop: 20,
   },
+  logout:{
+    marginBottom:1,
+    left:150,
+    top:10,
+  }
 });

@@ -75,15 +75,15 @@ const Detail = ({route, navigation}) => {
             <Icon name={'arrow-back-circle-outline'} size={50}></Icon>
             </Pressable>
             <View >
-              {/* <Text>hi</Text>
+            
            <YoutubePlayer height={500}   play={true}
-        videoId={'3RZ7uTh_0yA'} /> */}
-        <WebView
+        videoId={'3RZ7uTh_0yA'} /> 
+        {/* <WebView
         style={ {  marginTop: (Platform.OS == 'ios') ? 20 : 0,} }
         // javaScriptEnabled={true}
         // domStorageEnabled={true}
         source={{uri: 'https://www.youtube.com/watch?v=KQ6zr6kCPj8' }}
-    />
+    /> */}
          </View>
           </View>
         </Modal>
@@ -133,11 +133,11 @@ const styles = StyleSheet.create({
   },
   button: {
     top: -20,
-    right: -340,
+    right: -300,
   },
   fav: {
     top: -70,
-    right: -270,
+    right: -240,
   },
   video: {
     flex: 1,

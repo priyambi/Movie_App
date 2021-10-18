@@ -1,4 +1,4 @@
-import React, {Component,useState} from 'react';
+import React, {Component, useState, useContext} from 'react';
 import {
   Text,
   View,
@@ -10,21 +10,21 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import { BarPasswordStrengthDisplay } from 'react-native-password-strength-meter';
-
+import {AuthContext} from '../navigation/AuthProvider';
+import {BarPasswordStrengthDisplay} from 'react-native-password-strength-meter';
 
 export default function Signup({navigation}) {
-  const [password, setPassword] = useState("");
-  const [cpassword, setcPassword] = useState("");
-  const [isError, setIsError] = useState("");
-  
-  const checkValidation=(e) =>{
-    setcPassword(e.target.value);
-    if(password!=cpassword){
-      setIsError("Password does not match")
-    }
-    
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [cpassword, setcPassword] = useState('');
+  const [isError, setIsError] = useState('');
+  const {register} = useContext(AuthContext);
 
+  const checkValidation = e => {
+    setcPassword(e.target.value);
+    if (password != cpassword) {
+      setIsError('Password does not match');
+    }
   };
 
   // onChange = password => this.setState({ password })
@@ -59,7 +59,7 @@ export default function Signup({navigation}) {
           placeholder="Email"
           keyboardType="email-address"
           placeholderTextColor="black"
-       
+          onChangeText={email => setEmail(email)}
         />
       </View>
       <View style={styles.inputView}>
@@ -68,32 +68,30 @@ export default function Signup({navigation}) {
           placeholder="Password"
           placeholderTextColor="black"
           secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
-        /> 
-        </View>
-         
-        <View style={styles.inputView}>
+          onChangeText={password => setPassword(password)}
+        />
+      </View>
+
+      <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Confirm Password"
           placeholderTextColor="black"
           secureTextEntry={true}
-          onChangeText={(cpassword) => setcPassword(cpassword)}
+          onChangeText={cpassword => setcPassword(cpassword)}
           value={cpassword}
-          
-        /> 
-        </View>
-       
-        <View style={styles.barView}>
-         <BarPasswordStrengthDisplay
-          password={password}
         />
-        </View> 
+      </View>
+
+      <View style={styles.barView}>
+        <BarPasswordStrengthDisplay password={password} />
+      </View>
       <View>
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Profile')}>
+        <TouchableOpacity
+          style={styles.loginBtn}
+          onPress={() => register(email, password)}>
           <Text style={styles.loginText}>REGISTER</Text>
         </TouchableOpacity>
-        
       </View>
     </ImageBackground>
   );
@@ -109,11 +107,11 @@ const styles = StyleSheet.create({
 
   image: {
     marginBottom: 10,
-    marginTop:0,
-    
+    marginTop: 0,
+
     width: 100,
     height: 100,
-    opacity:0.7,
+    opacity: 0.7,
     resizeMode: 'contain',
   },
   searchIcon: {
@@ -169,11 +167,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  barView:{
-    marginTop:1,
-    color:'black',
-    alignSelf:'center',
-    width:'25%',
-    alignItems:'center',
-  }
+  barView: {
+    marginTop: 1,
+    color: 'black',
+    alignSelf: 'center',
+    width: '25%',
+    alignItems: 'center',
+  },
 });

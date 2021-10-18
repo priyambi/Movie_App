@@ -10,15 +10,11 @@ import UploadImage from '../screens/UploadImage';
 import Home from '../screens/Home';
 import Detail from '../screens/Detail';
 const Stack = createStackNavigator();
-export default function MainStackNavigator(){
+export default function LoginNavigator(){
   return (
   
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Splash"
-          component={Splash}
-          options={{headerShown: false}}
-        />
+      <Stack.Navigator initialRouteName="Login">
+        
         <Stack.Screen
           name="Login"
           component={Login}

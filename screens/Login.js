@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,12 +9,15 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import { AuthContext } from '../navigation/AuthProvider';
 // import Tabs from '../navigation/TabNavigator';
 // import Home from '../screens/Home';
 // import {NavigationContainer} from '@react-navigation/native';
 
 export default function App({navigation}) {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const{login}= useContext(AuthContext)
   return (
     <ImageBackground
       source={require('../assets/profile1.jpg')}
@@ -41,6 +44,8 @@ export default function App({navigation}) {
           placeholder="Password"
           placeholderTextColor="#003f5c"
           secureTextEntry={true}
+          onChangeText={(pass) => setPassword(pass)}
+          value={password}
         />
       </View>
 
@@ -55,7 +60,7 @@ export default function App({navigation}) {
       <TouchableOpacity
         style={styles.loginBtn}
       
-         onPress={() => navigation.navigate('Home') }
+         onPress={() => login(email,password) }
         // onPress={()=>{this.props.navigation.navigate('Profile', {
         //   data: email
         // });}}
