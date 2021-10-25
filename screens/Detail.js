@@ -7,23 +7,34 @@ import {
   ImageBackground,
   Modal,
   Pressable,
+  Alert,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import StarRating from 'react-native-star-rating';
 import PlayButton from '../components/PlayButton';
 import FavButton from '../components/FavButton';
-import Icon from 'react-native-vector-icons/Ionicons'
-import { SafeAreaView } from "react-native";
-import YoutubePlayer from "react-native-youtube-iframe";
+import Icon from 'react-native-vector-icons/Ionicons';
+import {SafeAreaView} from 'react-native';
+import YoutubePlayer from 'react-native-youtube-iframe';
 import WebView from 'react-native-webview';
-
+import auth from '@react-native-firebase/auth';
+import firestore from '@firebase/firestore';
 
 const Detail = ({route, navigation}) => {
   const movieDetail = route.params.movieDetail;
+  // const movieId = this.props.route.params.movieDetail.id;
   const [modalVisible, setModalVisible] = useState(false);
   const Video = () => {
     setModalVisible(!modalVisible);
   };
+  // const addToFavourites=async(movieId)=>{
+  //   alert('Added to Favourites');
+  //   var currentUser=await auth().currentUser;
+  //   this.dbRef.add({
+  //     email:auth().currentUser.email,
+  //     favourites:this.props.route.params.videoId,
+  //   })
+  // }
   return (
     <ImageBackground
       source={require('../assets/profile1.jpg')}
@@ -42,8 +53,13 @@ const Detail = ({route, navigation}) => {
           <View style={styles.button}>
             <PlayButton handlePress={Video} />
           </View>
+
           <View style={styles.fav}>
-            <FavButton />
+            <TouchableOpacity
+              style={{flexDirection: 'row'}}
+              onPress={() => Alert.alert('Movie added to Favourites')}>
+              <FavButton />
+            </TouchableOpacity>
           </View>
           <Text style={styles.movieName}>{movieDetail.title}</Text>
 
@@ -72,19 +88,17 @@ const Detail = ({route, navigation}) => {
         <Modal animationType="slide" visible={modalVisible}>
           <View style={styles.video}>
             <Pressable onPress={() => Video()}>
-            <Icon name={'arrow-back-circle-outline'} size={50}></Icon>
+              <Icon name={'arrow-back-circle-outline'} size={50}></Icon>
             </Pressable>
-            <View >
-            
-           <YoutubePlayer height={500}   play={true}
-        videoId={'3RZ7uTh_0yA'} /> 
-        {/* <WebView
+            <View>
+              <YoutubePlayer height={500} play={true} videoId={'3RZ7uTh_0yA'} />
+              {/* <WebView
         style={ {  marginTop: (Platform.OS == 'ios') ? 20 : 0,} }
         // javaScriptEnabled={true}
         // domStorageEnabled={true}
         source={{uri: 'https://www.youtube.com/watch?v=KQ6zr6kCPj8' }}
     /> */}
-         </View>
+            </View>
           </View>
         </Modal>
       </View>
@@ -95,7 +109,6 @@ export default Detail;
 const styles = StyleSheet.create({
   image: {
     height: 300,
-   
   },
   container: {
     flex: 1,
@@ -141,6 +154,6 @@ const styles = StyleSheet.create({
   },
   video: {
     flex: 1,
-   top:10,
+    top: 10,
   },
 });

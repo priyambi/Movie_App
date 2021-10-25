@@ -3,16 +3,22 @@ import auth from '@react-native-firebase/auth'
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+export const AuthProvider = ({ children, navigation }) => {
+     const [user, setUser] = useState(null);
+     const [isSignedIn, setisSignedIn]=useState(false);
     return (
         <AuthContext.Provider
             value={{
                 user,
                 setUser,
+                isSignedIn,
+                setisSignedIn,
+
                 login: async (email, password) => {
                     try {
-                        await auth().signInWithEmailAndPassword(email, password)
+                        await auth().signInWithEmailAndPassword(email, password);
+                        setisSignedIn(true);
+                        
                     } catch (e) {
                         console.log(e);
                     }
@@ -27,7 +33,13 @@ export const AuthProvider = ({ children }) => {
                 logout: async () => {
                     try {
                         await auth().signOut()
-                        .then(()=>alert('User has Signed Out'));
+
+                        .then(()=>{
+                            alert('User has Signed Out');
+                            console.log(user);
+                            setisSignedIn(false);
+                            // navigation.navigate('Login');
+                        });
                     //    props.navigation.navigate('Login');
                     } catch (e) {
                         console.log(e);

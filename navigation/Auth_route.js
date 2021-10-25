@@ -8,18 +8,19 @@ import { NavigationContainer } from '@react-navigation/native';
 
 function Auth_route() {
 
-   
+    
     useEffect(() => {
         const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-        return subscriber; // unsubscribe on unmount
+        return subscriber; 
     }, []);
 
     function onAuthStateChanged(user) {
         setUser(user);
+        // setisSignedIn(true);
         if (initializing) setInitializing(false);
     }
 
-    const [user, setUser] = useState(AuthContext);
+    const {isSignedIn, setisSignedIn, user,setUser} = useContext(AuthContext);
     const [initializing, setInitializing] = useState( true);
 
     if (initializing) return null;
@@ -27,7 +28,7 @@ function Auth_route() {
 
     return (
         <NavigationContainer independent={true}>
-          {  user ? <MainStackNavigator /> : <LoginNavigator />}
+          {  isSignedIn ? <MainStackNavigator /> : <LoginNavigator />}
         </NavigationContainer>
     )
 }
