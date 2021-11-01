@@ -770,6 +770,14 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@callstack/react-theme-provider@^3.0.6":
+  "integrity" "sha512-Ab6rbD2w4u9W3yf7LQQ8evx9m8fZNsoWxt+MFm3AyZnyKQNCJf4K7ip9tHHZgSs+HTdoj38lEqPehvFOVQKvAg=="
+  "resolved" "https://registry.npmjs.org/@callstack/react-theme-provider/-/react-theme-provider-3.0.7.tgz"
+  "version" "3.0.7"
+  dependencies:
+    "deepmerge" "^3.2.0"
+    "hoist-non-react-statics" "^3.3.0"
+
 "@cnakazawa/watch@^1.0.3":
   "integrity" "sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ=="
   "resolved" "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.4.tgz"
@@ -822,12 +830,12 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
-"@expo/config-plugins@^4.0.2":
-  "integrity" "sha512-j8IOVH0yL7ZDYcoozdpQb3ZuwUM/4eZ1QWy4icovjlyXGtRFyJvWZitZkA/7HK1+0mS2ZNSW28elp+LVTX3UfA=="
-  "resolved" "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-4.0.2.tgz"
-  "version" "4.0.2"
+"@expo/config-plugins@^4.0.3":
+  "integrity" "sha512-K/KQaw/CU8uLQgk7sFnZC54YGHoGucKFfdjYeZx5ds2eyzbuMAiKzGFcxZ/S+1dVBZ8QHzwowsVBW3kuYhnQ3Q=="
+  "resolved" "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-4.0.6.tgz"
+  "version" "4.0.6"
   dependencies:
-    "@expo/config-types" "^43.0.0"
+    "@expo/config-types" "^43.0.1"
     "@expo/json-file" "8.2.33"
     "@expo/plist" "0.0.15"
     "@react-native/normalize-color" "^2.0.0"
@@ -841,12 +849,12 @@
     "semver" "^7.3.5"
     "slash" "^3.0.0"
     "xcode" "^3.0.1"
-    "xml2js" "^0.4.23"
+    "xml2js" "0.4.23"
 
-"@expo/config-types@^43.0.0":
-  "integrity" "sha512-GBbEtLdGX40DJ1wTixWtOHseupA5xWclV57KNZ58ebauWAOyK3Fyni7GD2OCOzxTIFi1nSjqgO9JlMp3ayP4Tw=="
-  "resolved" "https://registry.npmjs.org/@expo/config-types/-/config-types-43.0.0.tgz"
-  "version" "43.0.0"
+"@expo/config-types@^43.0.1":
+  "integrity" "sha512-EtllpCGDdB/UdwAIs5YXJwBLpbFQNdlLLrxIvoILA9cXrpQMWkeDCT9lQPJzFRMFcLUaMuGvkzX2tR4tx5EQFQ=="
+  "resolved" "https://registry.npmjs.org/@expo/config-types/-/config-types-43.0.1.tgz"
+  "version" "43.0.1"
 
 "@expo/json-file@8.2.33":
   "integrity" "sha512-CDnhjdirUs6OdN5hOSTJ2y3i9EiJMk7Z5iDljC5xyCHCrUex7oyI8vbRsZEojAahxZccgL/PrO+CjakiFFWurg=="
@@ -1835,19 +1843,24 @@
   dependencies:
     "flow-bin" "0.113.0"
 
-"@react-native-firebase/app@^12.9.2", "@react-native-firebase/app@12.9.2":
-  "integrity" "sha512-aZ32taypvRGini7wynqbFTDppnFrBUsZAVcqB3ePY5tYi7DTTGK62UxIUGDuQ66BsHv7AULMOTj87RT1s37EHA=="
-  "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.9.2.tgz"
-  "version" "12.9.2"
+"@react-native-firebase/app@^12.9.3", "@react-native-firebase/app@12.9.3":
+  "integrity" "sha512-Qy5awKs/VvASUFvjXUCtkUxZo+MEt6Rv32xXK18isUDWoqsopL5o0tHiWF+86EAyZTx/j0C1nc6lYlCwvLvDwQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.9.3.tgz"
+  "version" "12.9.3"
   dependencies:
-    "@expo/config-plugins" "^4.0.2"
+    "@expo/config-plugins" "^4.0.3"
     "opencollective-postinstall" "^2.0.1"
     "superstruct" "^0.6.2"
 
-"@react-native-firebase/auth@^12.9.2":
-  "integrity" "sha512-aSGqPLHVsXrDgvyOMd7aAFLzex6Bpv5B9X5GATCaHppYoGMT2c1fRUwCXY6iRD377bS51Pf5ptXdShhbco94Jg=="
-  "resolved" "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-12.9.2.tgz"
-  "version" "12.9.2"
+"@react-native-firebase/auth@^12.9.3":
+  "integrity" "sha512-fVYPepp9LtL3k+ra7MuWmNxzhUmTTtBEaXHS1Ir2k0mgdAuPwssjW1MLrGl2ygvDsiMwm+tcBBw6DC9pfIa9hw=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-12.9.3.tgz"
+  "version" "12.9.3"
+
+"@react-native-firebase/firestore@^12.9.3":
+  "integrity" "sha512-vz7gPbb7eFxjKTRTe/XFsFq+feL1ngg8ukKNzxs/X7dj9SZ9iuOeqzLOFBBl6xcUS2adKkp8pfIIN9JeWUZmLA=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-12.9.3.tgz"
+  "version" "12.9.3"
 
 "@react-native-masked-view/masked-view@^0.2.6":
   "integrity" "sha512-303CxmetUmgiX9NSUxatZkNh9qTYYdiM8xkGf9I3Uj20U3eGY3M78ljeNQ4UVCJA+FNGS5nC1dtS9GjIqvB4dg=="
@@ -3806,7 +3819,7 @@
     "color-name" "^1.0.0"
     "simple-swizzle" "^0.2.2"
 
-"color@^3.1.3":
+"color@^3.1.2", "color@^3.1.3":
   "integrity" "sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA=="
   "resolved" "https://registry.npmjs.org/color/-/color-3.2.1.tgz"
   "version" "3.2.1"
@@ -7944,6 +7957,11 @@
   dependencies:
     "prop-types" "^15.5.10"
 
+"react-native-iphone-x-helper@^1.3.1":
+  "integrity" "sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg=="
+  "resolved" "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
+  "version" "1.3.1"
+
 "react-native-linear-gradient@^2.5.6":
   "integrity" "sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg=="
   "resolved" "https://registry.npmjs.org/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz"
@@ -7953,6 +7971,15 @@
   "integrity" "sha512-5zyol+FZ9X4N4OEz92IyaFFROR3KtgAgTmgqlUvG59Eigf+f6aWs5fvcbWwzuz/AlLZbrxIDrnLmSpMUOK57ww=="
   "resolved" "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-5.4.4.tgz"
   "version" "5.4.4"
+
+"react-native-paper@^4.9.2":
+  "integrity" "sha512-J7FRsd0YblQawtuj9I46F//apZHadsCKk6jWpc6njFTYdgUeCdkR8KgEto7cp2WxbcGNELx7KGwPQ4zAgX746A=="
+  "resolved" "https://registry.npmjs.org/react-native-paper/-/react-native-paper-4.9.2.tgz"
+  "version" "4.9.2"
+  dependencies:
+    "@callstack/react-theme-provider" "^3.0.6"
+    "color" "^3.1.2"
+    "react-native-iphone-x-helper" "^1.3.1"
 
 "react-native-password-strength-meter@0.0.5":
   "integrity" "sha512-MRKcs0+xkS1ufTVNJsvcXJy30A8IXxZpfY8NYCuAovup8gHYsRP/jUOf/T55dBGBuaSbz7FHFDp2LmV8cBktkw=="
@@ -8020,16 +8047,7 @@
   "resolved" "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-3.1.1.tgz"
   "version" "3.1.1"
 
-"react-native-vector-icons@^4.5.0":
-  "integrity" "sha512-rpfhfPiXCK2PX1nrNhdxSMrEGB/Gw/SvKoPM0G2wAkSoqynnes19K0VYI+Up7DqR1rFIpE4hP2erpT1tNx2tfg=="
-  "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-4.6.0.tgz"
-  "version" "4.6.0"
-  dependencies:
-    "lodash" "^4.0.0"
-    "prop-types" "^15.5.10"
-    "yargs" "^8.0.2"
-
-"react-native-vector-icons@^8.1.0":
+"react-native-vector-icons@*", "react-native-vector-icons@^8.1.0":
   "integrity" "sha512-sHIdBB6Y0dHaot2fMXgy5J/hhCn5YuyN7SKDNFgPzL8KA1oF2/v7mgYMavnK7LIIs2dJoGnDANKf61dsU+TZlg=="
   "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-8.1.0.tgz"
   "version" "8.1.0"
@@ -8042,6 +8060,15 @@
     "lodash.template" "^4.5.0"
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
+
+"react-native-vector-icons@^4.5.0":
+  "integrity" "sha512-rpfhfPiXCK2PX1nrNhdxSMrEGB/Gw/SvKoPM0G2wAkSoqynnes19K0VYI+Up7DqR1rFIpE4hP2erpT1tNx2tfg=="
+  "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-4.6.0.tgz"
+  "version" "4.6.0"
+  dependencies:
+    "lodash" "^4.0.0"
+    "prop-types" "^15.5.10"
+    "yargs" "^8.0.2"
 
 "react-native-web-webview@>=1.0.2":
   "integrity" "sha512-oNAYNuqUqeqTuAAdIejzDqvUtYA+k5lrvhUYmASdUznZNmyIaoQFA6OKoA4K9F3wdMvark42vUXkUWIp875ewg=="
@@ -8078,7 +8105,7 @@
   dependencies:
     "events" "^3.2.0"
 
-"react-native@*", "react-native@^0.57.1", "react-native@>=0.40.0", "react-native@>=0.50.0", "react-native@>=0.55", "react-native@>=0.57", "react-native@>=0.59", "react-native@>=0.60", "react-native@>=0.65.0-rc.0 || 0.0.0-*", "react-native@>=0.65.1", "react-native@0.65.1":
+"react-native@*", "react-native@^0.57.1", "react-native@>=0.40.0", "react-native@>=0.42.0", "react-native@>=0.50.0", "react-native@>=0.55", "react-native@>=0.57", "react-native@>=0.59", "react-native@>=0.60", "react-native@>=0.65.0-rc.0 || 0.0.0-*", "react-native@>=0.65.1", "react-native@0.65.1":
   "integrity" "sha512-0UOVSnlssweQZjuaUtzViCifE/4tXm8oRbxwakopc8GavPu9vLulde145GOw6QVYiOy4iL50f+2XXRdX9NmMeQ=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.65.1.tgz"
   "version" "0.65.1"
@@ -8137,7 +8164,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.2"
 
-"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.5.2", "react@^16.8", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0-rc.1", "react@>= 16.8.0", "react@>=16.8.6", "react@>=17.0.1", "react@16 || 17", "react@17.0.2":
+"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.5.2", "react@^16.8", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0-rc.1", "react@>= 16.8.0", "react@>=16.3.0", "react@>=16.8.6", "react@>=17.0.1", "react@16 || 17", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -9781,7 +9808,7 @@
   "resolved" "https://registry.npmjs.org/xml-name-validator/-/xml-name-validator-3.0.0.tgz"
   "version" "3.0.0"
 
-"xml2js@^0.4.23":
+"xml2js@0.4.23":
   "integrity" "sha512-ySPiMjM0+pLDftHgXY4By0uswI3SPKLDw/i3UXbnO8M/p28zqexCUoPmQFrYD+/1BzhGJSs2i1ERWKJAtiLrug=="
   "resolved" "https://registry.npmjs.org/xml2js/-/xml2js-0.4.23.tgz"
   "version" "0.4.23"

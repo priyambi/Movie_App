@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {
   Text,
   View,
@@ -18,10 +18,17 @@ import {SafeAreaView} from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import WebView from 'react-native-webview';
 import auth from '@react-native-firebase/auth';
-import firestore from '@firebase/firestore';
+// import { Firestore } from '@firebase/firestore';
+ import firestore from '@react-native-firebase/firestore';
+// import firestore from '@firebase/firestore';
+
 
 const Detail = ({route, navigation}) => {
   const movieDetail = route.params.movieDetail;
+  const ref = firestore().collection('favs');
+  const [ fav, setFav ] = useState('');
+  const [ favs, setFavs ] = useState([]);
+  const [ loading, setLoading ] = useState(true);
   // const movieId = this.props.route.params.movieDetail.id;
   const [modalVisible, setModalVisible] = useState(false);
   const Video = () => {
@@ -35,6 +42,34 @@ const Detail = ({route, navigation}) => {
   //     favourites:this.props.route.params.videoId,
   //   })
   // }
+  async function addFav() {
+    alert('Added to Favourites');
+    await ref.add({
+      title: movieDetail.title,
+      complete: false,
+    });
+    // setFav('');
+    console.log(movieDetail.title);
+  }
+  // useEffect(() => {
+  //   return ref.onSnapshot(querySnapshot => {
+  //     const list = [];
+  //     querySnapshot.forEach(doc => {
+  //       const {title, complete } = doc.data();
+  //       list.push({
+  //         id: doc.id,
+  //         title,
+  //         complete,
+  //       });
+  //     });
+
+  //     setFavs(list);
+
+  //     if (loading) {
+  //       setLoading(false);
+  //     }
+  //   });
+  // }, []);
   return (
     <ImageBackground
       source={require('../assets/profile1.jpg')}
@@ -57,7 +92,15 @@ const Detail = ({route, navigation}) => {
           <View style={styles.fav}>
             <TouchableOpacity
               style={{flexDirection: 'row'}}
-              onPress={() => Alert.alert('Movie added to Favourites')}>
+              // value={fav}
+              // value={movieDetail.title}
+              label={'New Favourite'}
+              // onPress={()=>setFav()}
+             onPress={() => {
+              
+              addFav();
+
+             }}>
               <FavButton />
             </TouchableOpacity>
           </View>
