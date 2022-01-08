@@ -1,3 +1,7 @@
 # Movie_App
 
+### ✨✨Priyambi's Movie Mania is a movie Application that renders all the latest movies in the industry and gives the detailed description,trailer and also the feature to add it to your favourites. Besides that the user can watch the trailer of the movie. The Search functionality lets you search movie from any genre.✨✨
+
+## Screenshots of the Mobile Application:-
+
 <img src="https://user-images.githubusercontent.com/79246912/148646736-deea6f0a-4d3c-4b5e-b552-cee197c4e40c.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646739-8e948457-001f-47b6-bf0c-d40ba92b1ba7.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646741-c8d335b1-ff5d-4563-a6c7-b02c3b3adf3c.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646745-bd153ff6-411a-4e14-8c0d-32b226a5bc9b.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646748-711b27a3-a816-4fa9-be82-bd42e426ee84.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646749-d53ffcc0-7fad-4346-9321-a1a5ec9192c7.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646752-f0bb1cab-a41e-4789-b7f6-be4f88878d19.PNG"  width="300" height="550"> <img src="https://user-images.githubusercontent.com/79246912/148646756-97487d47-409e-4d16-a3f0-841133b9a9b5.PNG"  width="300" height="550"> 
